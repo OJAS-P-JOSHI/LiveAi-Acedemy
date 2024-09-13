@@ -1,21 +1,24 @@
-import { View, Text, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const Login = () => {
-    return(
-        <View style={styles.container}>
+    const navigation = useNavigation();
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={() => {navigation.navigate("Home")}}>
         <Text>Open up Login.tsx to start working on your app!</Text>
-        
-      </View>
-    );
-  }
-  
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
-  
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
 export default Login;
