@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const Login = () => {
+const Quiz = () => {
     const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => {navigation.navigate("HomeTab")}}>
-        <Text>Open up Login.tsx to start working on your app!</Text>
+      <TouchableOpacity>
+        <Text>Quiz Screen</Text>
       </TouchableOpacity>
     </View>
   );
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Quiz;

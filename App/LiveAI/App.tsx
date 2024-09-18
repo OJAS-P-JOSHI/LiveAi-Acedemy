@@ -3,7 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./screens/LoginScreen";
-import Home from "./screens/HomeScreen";
+import HomeTabScreen from "./components/BottomNavigation";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -16,11 +17,17 @@ export default function App() {
           component={Login}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Home"
           component={Home}
           options={{ headerShown: false }}
+        /> */}
+        <Stack.Screen
+          name="HomeTab"
+          component={HomeTabScreen}
+          options={{ headerShown: false }}
         />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
