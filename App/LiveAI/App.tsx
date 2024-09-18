@@ -6,19 +6,36 @@ import Login from './screens/LoginScreen';
 import CourseDetail from './screens/CourseDetail';
 import OTP from './screens/OTPScreen';
 // import ChatBot from './screens/Chatboat';
+import HomeTabScreen from "./components/BottomNavigation";
+import RegistrationPage from './screens/RegistrationPage';
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} options={{headerShown: false }} />
-      <Stack.Screen name="OTP" component={OTP} options={{headerShown: false }} />
-      <Stack.Screen name="CourseDetail" component={CourseDetail} options={{headerShown: false }} />
-      {/* <Stack.Screen name="ChatBot" component={ChatBot} options={{headerShown: false }} /> */}
-    </Stack.Navigator>
-  </NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="CourseDetail" component={CourseDetail} options={{headerShown: false }} />
+       <Stack.Screen name="OTP" component={OTP} options={{headerShown: false }} />
+       {/* <Stack.Screen name="ChatBot" component={ChatBot} options={{headerShown: false }} /> */}
+        <Stack.Screen
+          name="HomeTab"
+          component={HomeTabScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="RegisterScreen"
+          component={RegistrationPage}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

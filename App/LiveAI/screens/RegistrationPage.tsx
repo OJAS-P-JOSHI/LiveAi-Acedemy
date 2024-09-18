@@ -15,7 +15,7 @@ const RegistrationPage = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
-        <Image source={require('../assets/logo.jpg')} style={styles.logo} />
+        <Image source={require('../assets/ailogo.jpg')} style={styles.logo} />
         <Text style={styles.headerText}>Fill your details to register for course</Text>
         
         <View style={styles.form}>

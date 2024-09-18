@@ -8,7 +8,7 @@ const ProfileScreen = ({ navigation }) => {
      
       <View style={styles.header}>
         <Image 
-          source={require('../assets/logo.jpg')} 
+          source={require('../assets/ailogo.jpg')} // replace with your logo path
           style={styles.logo}
         />
         <TouchableOpacity onPress={() => console.log('Edit Profile')}>
