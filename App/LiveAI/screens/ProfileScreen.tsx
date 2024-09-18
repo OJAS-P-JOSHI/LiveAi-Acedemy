@@ -5,10 +5,10 @@ import { Icon } from 'react-native-elements';
 const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header: Logo and Edit Icon */}
+     
       <View style={styles.header}>
         <Image 
-          source={require('../assets/logo.jpg')} // replace with your logo path
+          source={require('../assets/logo.jpg')} 
           style={styles.logo}
         />
         <TouchableOpacity onPress={() => console.log('Edit Profile')}>
@@ -18,36 +18,25 @@ const ProfileScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      {/* User Image */}
+      
       <Image 
-        source={require('../assets/demo-user.jpg')} // replace with your user image path
+        source={require('../assets/demo-user.jpg')} 
         style={styles.userImage}
       />
 
-      {/* User Info */}
+      
       <View style={styles.infoContainer}>
         <Text style={styles.infoText}>Student Name</Text>
         <Text style={styles.infoText}>Student@gmail.com</Text>
         <Text style={styles.infoText}>1234567890</Text>
       </View>
 
-      {/* Logout Button */}
+      
       <TouchableOpacity style={styles.logoutButton} onPress={() => console.log('Logout')}>
         <Text style={styles.logoutText}>Logout</Text>
       </TouchableOpacity>
 
-      {/* Footer */}
-      <View style={styles.footer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Text style={styles.footerText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('YourCourses')}>
-          <Text style={styles.footerText}>Your Courses</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-          <Text style={styles.footerText}>Profile</Text>
-        </TouchableOpacity>
-      </View>
+     
     </SafeAreaView>
   );
 };
@@ -97,23 +86,8 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
   },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-
-    backgroundColor: '#f8f8f8',
-    paddingVertical: 10,
-    borderTopWidth: 1,
-    borderTopColor: '#ddd',
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-  },
-  footerText: {
-    fontSize: 16,
-    color: '#3388B7',
-  },
+  
+  
 });
 
 export default ProfileScreen;
