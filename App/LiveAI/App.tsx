@@ -7,6 +7,7 @@ import CourseDetail from './screens/CourseDetail';
 import OTP from './screens/OTPScreen';
 // import ChatBot from './screens/Chatboat';
 import HomeTabScreen from "./components/BottomNavigation";
+import RegistrationPage from './screens/RegistrationPage';
 
 
 const Stack = createNativeStackNavigator();
@@ -28,7 +29,11 @@ export default function App() {
           component={HomeTabScreen}
           options={{ headerShown: false }}
         />
-        
+        <Stack.Screen
+          name="RegisterScreen"
+          component={RegistrationPage}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

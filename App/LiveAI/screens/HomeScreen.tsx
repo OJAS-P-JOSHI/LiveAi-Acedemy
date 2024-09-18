@@ -23,8 +23,11 @@ const Home = () => {
         style={styles.avoidingView}
         keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20} // Adjust if needed for your layout
       >
-        <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag" >
+        <ScrollView
+          contentContainerStyle={styles.container}
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+        >
           <View style={styles.searchHeader}>
             <View style={styles.searchBar}>
               <TouchableOpacity
@@ -77,14 +80,16 @@ const Home = () => {
               </TouchableOpacity>
             </View>
             <View style={styles.course}>
-              <Image
-                source={require("../assets/image.png")}
-                style={styles.courseimage}
-              />
-              <View style={styles.courseDetail}>
-                <Text style={styles.courseHeading}>Computer Vision</Text>
-                <Text style={styles.teacherHeading}>By Prof. Anil Rokde</Text>
-              </View>
+              <TouchableOpacity onPress={() => {navigation.navigate("RegisterScreen")}}>
+                <Image
+                  source={require("../assets/image.png")}
+                  style={styles.courseimage}
+                />
+                <View style={styles.courseDetail}>
+                  <Text style={styles.courseHeading}>Computer Vision</Text>
+                  <Text style={styles.teacherHeading}>By Prof. Anil Rokde</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={styles.courseView}>
