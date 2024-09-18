@@ -10,6 +10,8 @@ const RegistrationPage = () => {
     navigation.navigate('RegisterScreen'); // Replace with actual screen name
   };
 
+ 
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -31,6 +33,7 @@ const RegistrationPage = () => {
         </TouchableOpacity>
       </ScrollView>
 
+      
     </SafeAreaView>
   );
 };
@@ -80,6 +83,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
   },
+
 });
 
 export default RegistrationPage;

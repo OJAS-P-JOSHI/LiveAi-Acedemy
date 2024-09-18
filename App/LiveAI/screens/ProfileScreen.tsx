@@ -5,7 +5,7 @@ import { Icon } from 'react-native-elements';
 const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header: Logo and Edit Icon */}
+     
       <View style={styles.header}>
         <Image 
           source={require('../assets/ailogo.jpg')} // replace with your logo path
@@ -18,23 +18,25 @@ const ProfileScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      {/* User Image */}
+      
       <Image 
-        source={require('../assets/demo-user.jpg')} // replace with your user image path
+        source={require('../assets/demo-user.jpg')} 
         style={styles.userImage}
       />
 
-      {/* User Info */}
+      
       <View style={styles.infoContainer}>
         <Text style={styles.infoText}>Student Name</Text>
         <Text style={styles.infoText}>Student@gmail.com</Text>
         <Text style={styles.infoText}>1234567890</Text>
       </View>
 
-      {/* Logout Button */}
+      
       <TouchableOpacity style={styles.logoutButton} onPress={() => console.log('Logout')}>
         <Text style={styles.logoutText}>Logout</Text>
       </TouchableOpacity>
+
+     
     </SafeAreaView>
   );
 };
@@ -84,6 +86,8 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
   },
+  
+  
 });
 
 export default ProfileScreen;
