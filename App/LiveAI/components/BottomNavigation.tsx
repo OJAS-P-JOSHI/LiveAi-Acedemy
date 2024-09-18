@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Home from "../screens/HomeScreen";
 import Quiz from "../screens/QuizPage";
-import Profile from "../screens/ProfileScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 import { StyleSheet, View, Text } from "react-native";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -50,7 +50,7 @@ const HomeTabScreen = () => {
       >
         <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
         <Tab.Screen name="Quiz" component={Quiz} options={{ headerShown: false }}/>
-        <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+        <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
       </Tab.Navigator>
     </SafeAreaProvider>
   );

@@ -8,7 +8,7 @@ const ProfileScreen = ({ navigation }) => {
       {/* Header: Logo and Edit Icon */}
       <View style={styles.header}>
         <Image 
-          source={require('../assets/logo.jpg')} // replace with your logo path
+          source={require('../assets/ailogo.jpg')} // replace with your logo path
           style={styles.logo}
         />
         <TouchableOpacity onPress={() => console.log('Edit Profile')}>
@@ -35,19 +35,6 @@ const ProfileScreen = ({ navigation }) => {
       <TouchableOpacity style={styles.logoutButton} onPress={() => console.log('Logout')}>
         <Text style={styles.logoutText}>Logout</Text>
       </TouchableOpacity>
-
-      {/* Footer */}
-      <View style={styles.footer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Text style={styles.footerText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('YourCourses')}>
-          <Text style={styles.footerText}>Your Courses</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-          <Text style={styles.footerText}>Profile</Text>
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };
@@ -96,23 +83,6 @@ const styles = StyleSheet.create({
   logoutText: {
     color: '#fff',
     fontSize: 18,
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-
-    backgroundColor: '#f8f8f8',
-    paddingVertical: 10,
-    borderTopWidth: 1,
-    borderTopColor: '#ddd',
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-  },
-  footerText: {
-    fontSize: 16,
-    color: '#3388B7',
   },
 });
 

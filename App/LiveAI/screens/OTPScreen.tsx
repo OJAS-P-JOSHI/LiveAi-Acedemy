@@ -40,13 +40,13 @@ const OTP = () => {
 
   
   const verifyOtp = async () => {
-    navigation.navigate('CourseDetail'); 
+    navigation.navigate('HomeTab'); 
   };
 
   return (
     <View style={styles.container}>
       <View>
-        <Image source={require("../assets/ai logo.jpg")} style={styles.image} />
+        <Image source={require("../assets/ailogo.jpg")} style={styles.image} />
         <Text style={styles.title}>Illuminate the Path to</Text>
         <Text style={styles.title1}>Innovation with AI Mastery</Text>
       </View>

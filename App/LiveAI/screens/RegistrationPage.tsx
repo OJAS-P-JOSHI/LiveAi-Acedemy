@@ -10,25 +10,10 @@ const RegistrationPage = () => {
     navigation.navigate('RegisterScreen'); // Replace with actual screen name
   };
 
-  const navigateToHome = () => {
-    // Navigation logic for Home
-    navigation.navigate('Home');
-  };
-
-  const navigateToCourses = () => {
-    // Navigation logic for Your Courses
-    navigation.navigate('YourCourses');
-  };
-
-  const navigateToProfile = () => {
-    // Navigation logic for Profile
-    navigation.navigate('Profile');
-  };
-
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
-        <Image source={require('../assets/logo.jpg')} style={styles.logo} />
+        <Image source={require('../assets/ailogo.jpg')} style={styles.logo} />
         <Text style={styles.headerText}>Fill your details to register for course</Text>
         
         <View style={styles.form}>
@@ -46,17 +31,6 @@ const RegistrationPage = () => {
         </TouchableOpacity>
       </ScrollView>
 
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerButton} onPress={navigateToHome}>
-          <Text style={styles.footerButtonText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerButton} onPress={navigateToCourses}>
-          <Text style={styles.footerButtonText}>Your Courses</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerButton} onPress={navigateToProfile}>
-          <Text style={styles.footerButtonText}>Profile</Text>
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };
@@ -104,34 +78,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    paddingVertical: 10,
-    backgroundColor: '#f8f8f8',
-    borderTopWidth: 1,
-    borderTopColor: '#ddd',
-    ...Platform.select({
-      ios: {
-        position: 'absolute',
-        bottom: 0,
-        width: '100%',
-      },
-      android: {
-        position: 'absolute',
-        bottom: 0,
-        width: '100%',
-      },
-    }),
-  },
-  footerButton: {
-    padding: 10,
-  },
-  footerButtonText: {
-    color: '#3388B7',
     fontSize: 16,
   },
 });
