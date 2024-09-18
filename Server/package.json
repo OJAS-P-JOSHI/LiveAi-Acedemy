@@ -1,10 +1,12 @@
 {
-  "name": "server",
+  "name": "course-selling-app-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "echo 'Nothing to build for backend'",
+    "test": "echo 'No test specified'"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "course-selling-app-backend": "file:",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "express-async-handler": "^1.2.0",
