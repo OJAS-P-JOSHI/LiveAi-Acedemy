@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function CourseDetail() {
   const navigation = useNavigation();
   const handlePress = () => {
-    navigation.navigate('ChatBot'); 
+    navigation.navigate("ChatBot"); 
   };
   return (
     <View style={styles.container}>
