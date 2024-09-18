@@ -1,121 +1,139 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
-import { Picker } from '@react-native-picker/picker'; // For dropdown
-import SelectDropdown from 'react-native-select-dropdown'; // For searchable dropdown
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, SafeAreaView, ScrollView, Platform } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const RegistrationPage = () => {
-  const [selectedEducation, setSelectedEducation] = useState('');
-  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const navigation = useNavigation();
 
-  const educationLevels = [
-    "8th/9th/10th", "11th/12th", "Bachelor of Technology (B.Tech)", "Bachelor of Engineering (B.E.)",
-    "Bachelor of Computer Applications (BCA)", "Bachelor of Commerce (B.Com)", "Bachelor of Science (B.Sc)",
-    "Master of Technology (M.Tech)", "Master of Engineering (M.E.)", "Master of Computer Applications (MCA)",
-    "Master of Commerce (M.Com)", "Master of Science (M.Sc)", "Other"
-  ];
+  const handleRegister = () => {
+    // Navigation logic for Register button
+    navigation.navigate('RegisterScreen'); // Replace with actual screen name
+  };
 
-  const districts = [
-    "Agartala", "Agra", "Ahmedabad", "Aizawl", "Ajmer", "Alappuzha", "Aligarh", "Allahabad", "Almora", "Alwar", "Ambala", "Ambassa", "Amravati",
-    "Amritsar", "Anand", "Anantapur", "Ara", "Bagalkot", "Bageshwar", "Bagmara", "Ballari", "Bareilly", "Bardhaman", "Baddi", "Balangir", "Balasore",
-    "Baleshwar", "Bapatla", "Baripada", "Bathinda", "Beed", "Belagavi", "Belonia", "Bengaluru", "Berhampur", "Bhandara", "Bharuch", "Bhadrak", 
-    "Bhagalpur", "Bhavnagar", "Bhiwani", "Bhilai", "Bhilwara", "Bhopal", "Bhubaneswar", "Bidar", "Bicholim", "Bilaspur", "Bodh Gaya", "Bokaro", 
-    "Bomdila", "Canacona", "Chamoli", "Chamba", "Chandel", "Chhatrapati Sambhajinagar", "Cherrapunji", "Chennai", "Chikkamagaluru", "Chittoor", 
-    "Churachandpur", "Coimbatore", "Cuddalore", "Curchorem", "Cuttack", "Darbhanga", "Darjeeling", "Davangere", "Dehradun", "Dewas", "Dhamtari", 
-    "Dhanbad", "Dibrugarh", "Dimapur", "Dindigul", "Diphu", "Dispur", "Diu", "Durg", "Ernakulam", "Erode", "Faridabad", "Faridkot", "Fatehgarh Sahib", 
-    "Ferozepur", "Gadchiroli", "Gandhinagar", "Gangtok", "Gaya", "Ghaziabad", "Giridih", "Goa", "Goalpara", "Golaghat", "Gondia", "Gorakhpur", 
-    "Guntur", "Guwahati", "Gwalior", "Hamirpur", "Haldwani", "Haridwar", "Hassan", "Hazaribagh", "Hisar", "Hingoli", "Howrah", "Hubballi", "Hyderabad", 
-    "Idukki", "Imphal", "Indore", "Itanagar", "Jabalpur", "Jagdalpur", "Jalandhar", "Jalgaon", "Jalna", "Jamshedpur", "Jamnagar", "Jorhat", "Jodhpur", 
-    "Junagadh", "Kailasahar", "Kakinada", "Kalaburagi", "Kanchipuram", "Kanpur", "Karnal", "Karimnagar", "Kasaragod", "Katni", "Khammam", "Kharagpur", 
-    "Khonsa", "Kochi", "Kohima", "Kolhapur", "Kollam", "Kozhikode", "Kurnool", "Kurukshetra", "Lachung", "Latur", "Lawngtlai", "Lucknow", "Ludhiana", 
-    "Lunglei", "Madurai", "Mairang", "Malkangiri", "Mamit", "Mandi", "Mangaluru", "Mapusa", "Margao", "Meerut", "Mohali", "Mormugao", "Muzaffarpur", 
-    "Mysuru", "Nagaland", "Nagpur", "Nagaon", "Nainital", "Namchi", "Nanded", "Nandurbar", "Nashik", "Nellore", "Nizamabad", "Dharashiv", "Palakkad", 
-    "Palamu", "Palghar", "Panaji", "Panipat", "Patiala", "Patna", "Pasighat", "Pauri", "Phek", "Pimpri-Chinchwad", "Pithoragarh", "Pune", "Puri", 
-    "Raigad", "Raigarh", "Raipur", "Rajahmundry", "Rajkot", "Rajnandgaon", "Rajahmundry", "Ratlam", "Ratnagiri", "Rohtak", "Rourkela", "Sagar", 
-    "Saharsa", "Salem", "Sangli", "Saraikela", "Satara", "Shillong", "Shimla", "Silchar", "Siliguri", "Sindhudurg", "Sikar", "Solan", "Solapur", 
-    "Sonipat", "Surat", "Suryapet", "Tawang", "Tezpur", "Thane", "Thanjavur", "Thiruvananthapuram", "Thrissur", "Tiruchirappalli", "Tirunelveli", 
-    "Tirupati", "Tura", "Udaipur", "Udaipur (Tripura)", "Udhampur", "Ujjain", "Ukhrul", "Umarkhed", "Uttarkashi", "Vadodara", "Varanasi", "Vijayawada", 
-    "Visakhapatnam", "Vizianagaram", "Wardha", "Warangal", "Washim", "Wokha", "Yavatmal", "Yadadri"
-  ];
+  const navigateToHome = () => {
+    // Navigation logic for Home
+    navigation.navigate('Home');
+  };
+
+  const navigateToCourses = () => {
+    // Navigation logic for Your Courses
+    navigation.navigate('YourCourses');
+  };
+
+  const navigateToProfile = () => {
+    // Navigation logic for Profile
+    navigation.navigate('Profile');
+  };
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1, padding: 20, backgroundColor: '#fff' }}>
-      {/* Logo */}
-      <View style={{ alignItems: 'center', marginTop: 20 }}>
-        <Image source={require('C:\LiveAi-Acedemy\App\LiveAI\assets\logo.jpg')} style={{ width: 100, height: 100 }} />
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Image source={require('../assets/logo.jpg')} style={styles.logo} />
+        <Text style={styles.headerText}>Fill your details to register for course</Text>
+        
+        <View style={styles.form}>
+          <TextInput placeholder="Full Name" style={styles.input} />
+          <TextInput placeholder="Email ID" keyboardType="email-address" style={styles.input} />
+          <TextInput placeholder="Mobile Number" keyboardType="phone-pad" style={styles.input} />
+          <TextInput placeholder="Address" style={styles.input} />
+          <TextInput placeholder="College Name" style={styles.input} />
+          <TextInput placeholder="Current Education" style={styles.input} />
+          <TextInput placeholder="District" style={styles.input} />
+        </View>
+
+        <TouchableOpacity style={styles.button} onPress={handleRegister}>
+          <Text style={styles.buttonText}>Register for Course</Text>
+        </TouchableOpacity>
+      </ScrollView>
+
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.footerButton} onPress={navigateToHome}>
+          <Text style={styles.footerButtonText}>Home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerButton} onPress={navigateToCourses}>
+          <Text style={styles.footerButtonText}>Your Courses</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerButton} onPress={navigateToProfile}>
+          <Text style={styles.footerButtonText}>Profile</Text>
+        </TouchableOpacity>
       </View>
-
-      {/* Title */}
-      <Text style={{ textAlign: 'center', color: 'blue', fontSize: 20, marginVertical: 20 }}>
-        Fill your details
-      </Text>
-
-      {/* Form Fields */}
-      <TextInput placeholder="Full Name" style={styles.input} />
-      <TextInput placeholder="Email ID" style={styles.input} keyboardType="email-address" />
-      <TextInput placeholder="Mobile Number" style={styles.input} keyboardType="phone-pad" />
-      <TextInput placeholder="Address" style={styles.input} />
-      <TextInput placeholder="College Name" style={styles.input} />
-
-      {/* Current Education (Dropdown) */}
-      <SelectDropdown
-        data={educationLevels}
-        onSelect={(selectedItem) => setSelectedEducation(selectedItem)}
-        defaultButtonText="Select Current Education"
-        buttonStyle={styles.dropdown}
-        buttonTextStyle={styles.dropdownText}
-        search
-        searchPlaceHolder="Search Education"
-      />
-
-      {/* District (Dropdown) */}
-      <SelectDropdown
-        data={districts}
-        onSelect={(selectedItem) => setSelectedDistrict(selectedItem)}
-        defaultButtonText="Select District"
-        buttonStyle={styles.dropdown}
-        buttonTextStyle={styles.dropdownText}
-        search
-        searchPlaceHolder="Search District"
-      />
-
-      {/* Submit Button */}
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Proceed</Text>
-      </TouchableOpacity>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
-const styles = {
-  input: {
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 10,
-    marginVertical: 10,
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
   },
-  dropdown: {
+  container: {
+    flexGrow: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
+  },
+  headerText: {
+    color: '#3388B7',
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  form: {
     width: '100%',
-    marginVertical: 10,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
   },
-  dropdownText: {
-    textAlign: 'left',
-    fontSize: 16,
+  input: {
+    height: 50,
+    borderColor: '#ddd',
+    borderWidth: 1,
+    marginBottom: 10,
+    paddingHorizontal: 15,
+    borderRadius: 30,
   },
   button: {
-    backgroundColor: 'blue',
-    padding: 15,
-    borderRadius: 5,
+    backgroundColor: '#3388B7',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    marginTop: 10,
+    width: '100%',
     alignItems: 'center',
-    marginVertical: 20,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
-  }
-};
+    fontSize: 16,
+  },
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    paddingVertical: 10,
+    backgroundColor: '#f8f8f8',
+    borderTopWidth: 1,
+    borderTopColor: '#ddd',
+    ...Platform.select({
+      ios: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+      },
+      android: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+      },
+    }),
+  },
+  footerButton: {
+    padding: 10,
+  },
+  footerButtonText: {
+    color: '#3388B7',
+    fontSize: 16,
+  },
+});
 
 export default RegistrationPage;
