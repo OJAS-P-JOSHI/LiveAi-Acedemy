@@ -15,7 +15,7 @@ const router = express.Router();
  *       200:
  *         description: A list of courses
  */
-router.get('/', protect, getCourses);
+router.get('/', getCourses);
 
 /**
  * @swagger
