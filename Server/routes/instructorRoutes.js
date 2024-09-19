@@ -15,7 +15,7 @@ const router = express.Router();
  *       200:
  *         description: A list of instructors
  */
-router.get('/', protect, getInstructors);
+router.get('/', getInstructors);
 
 /**
  * @swagger
