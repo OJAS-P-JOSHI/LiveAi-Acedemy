@@ -16,7 +16,7 @@ import Google from "../assets/google";
 const Login = () => {
   const navigation = useNavigation();
   const handlePress = () => {
-    navigation.navigate('OTP'); 
+    navigation.navigate('HomeTab'); 
   };
   return (
     <View style={styles.container}>
@@ -25,11 +25,13 @@ const Login = () => {
         <Text style={styles.title}>Illuminate the Path to</Text>
         <Text style={styles.title1}>Innovation with AI Mastery</Text>
       </View>
-      <TouchableOpacity onPress={handlePress}>
-        <View style={{ marginBottom: "40%", height: "10%" }}>
-          <Google />
+      
+        <View style={{ marginBottom: "40%", height: "10%",width:"90%",marginLeft:"10%" }}>
+        <TouchableOpacity onPress={handlePress}>
+          <Google width={ "90%"} height={"100%"} />
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
+     
     </View>
   );
 };
@@ -62,6 +64,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     alignItems: "center",
+    textAlign:"center",
     color: "#2F88A0",
     fontWeight: "bold",
   },
