@@ -1,42 +1,59 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { Text, View, StyleSheet,Image ,TouchableOpacity} from "react-native";
 
-export default function CourseDetail() {
-  const navigation = useNavigation();
-  const handlePress = () => {
-    navigation.navigate("ChatBot"); 
-  };
+const CourseDetail = () => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={handlePress}>
-      <View style={{ marginTop: "70%" }}>
-        <Text style={styles.text}>COURSE DETAILS</Text>
-        <View style={styles.spacer} />
-        <View style={styles.horizontalLine} />
-      </View>
-      </TouchableOpacity>
-      
+      <View style={styles.course}>
+              
+                <Image
+                  source={require("../assets/image.png")}
+                  style={styles.courseimage}
+                />
+                <View style={styles.courseDetail}>
+                  <Text style={styles.courseHeading}>Computer Vision</Text>
+                  <Text style={styles.teacherHeading}>By Prof. Anil Rokde</Text>
+                </View>
+             
+            </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#fff",
+    
+  },
+  courseimage: {
+    width: "98%",
+    borderRadius: 12,
+    height: "55%",
+    alignItems:"center",
+    
+  },
+  course: {
+    width: "100%",
+    marginTop: "2%",
+  },
+  courseDetail: {
+    bottom: "27%",
+    marginLeft: "2%",
+  },
+  courseHeading: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "700",
+  },
+  teacherHeading: {
+    color: "white",
+    fontSize: 18,
   },
   text: {
     fontSize: 24,
     fontWeight: "bold",
-    left:"5%",
-  },
-  spacer: {
-    height: 20, 
-  },
-  horizontalLine: {
-    width: "100%", 
-    height: 1, // Line height
-    backgroundColor: "grey", // Line color
-    marginBottom: 50,
   },
 });
+
+export default CourseDetail;

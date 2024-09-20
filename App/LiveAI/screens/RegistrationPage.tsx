@@ -6,8 +6,8 @@ const RegistrationPage = () => {
   const navigation = useNavigation();
 
   const handleRegister = () => {
-    // Navigation logic for Register button
-    navigation.navigate('RegisterScreen'); // Replace with actual screen name
+   
+    navigation.navigate('CourseDetail'); 
   };
 
  
