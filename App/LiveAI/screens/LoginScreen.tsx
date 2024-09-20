@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Google from "../assets/google";
+import { logo } from "../utils/Constant";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -21,7 +22,7 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <View>
-        <Image source={require("../assets/ailogo.jpg")} style={styles.image} />
+        <Image source={logo} style={styles.image} />
         <Text style={styles.title}>Illuminate the Path to</Text>
         <Text style={styles.title1}>Innovation with AI Mastery</Text>
       </View>
@@ -88,11 +89,9 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 250,
-    backgroundColor: "black",
     height: "50%",
     borderRadius: 100,
     left: "10%",
   },
 });
 export default Login;
-

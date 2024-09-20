@@ -8,11 +8,14 @@ import {
   SafeAreaView,
   ScrollView,
   KeyboardAvoidingView,
-  Platform,
+  Platform,  Dimensions,
 } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
+import { courseImage } from "../utils/Constant";
+
+const { width, height } = Dimensions.get('window');
 
 const Home = () => {
   const navigation = useNavigation();
@@ -82,7 +85,7 @@ const Home = () => {
             <View style={styles.course}>
               <TouchableOpacity onPress={() => {navigation.navigate("RegisterScreen")}}>
                 <Image
-                  source={require("../assets/image.png")}
+                  source={courseImage}
                   style={styles.courseimage}
                 />
                 <View style={styles.courseDetail}>
@@ -106,7 +109,7 @@ const Home = () => {
             </View>
             <View style={styles.course}>
               <Image
-                source={require("../assets/image.png")}
+                source={courseImage}
                 style={styles.courseimage}
               />
               <View style={styles.courseDetail}>
@@ -127,7 +130,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white", // Or any background color you need
   },
   container: {
-    flexGrow: 1,
+    width: width * 0.9,  // 90% of the screen width
+    height: height * 0.5,
     backgroundColor: "#fff",
   },
   hello: {
