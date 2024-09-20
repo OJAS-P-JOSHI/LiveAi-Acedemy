@@ -45,12 +45,12 @@ const HomeTabScreen = () => {
           tabBarActiveTintColor: "#3F4883",
           tabBarInactiveTintColor: "gray",
           tabBarStyle: styles.tabBarStyle,
-          tabBarLabel: () => null, // Hides the default tab label
+          tabBarLabel: () => null, 
         })}
       >
         <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
         <Tab.Screen name="Quiz" component={Quiz} options={{ headerShown: false }}/>
-        <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+        <Tab.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}}  />
       </Tab.Navigator>
     </SafeAreaProvider>
   );
