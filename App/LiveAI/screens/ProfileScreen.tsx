@@ -10,29 +10,35 @@ import {
 } from "react-native";
 import { Icon } from "react-native-elements";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
 
 const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ height: 50, flexDirection: 'row', marginTop: '10%' }}>
-        <AntDesign name="left" size={27} color="#3F4883" />
-        <Text>Profile</Text>
+      <View
+        style={{
+          height: 40,
+          flexDirection: "row",
+          marginTop: "8%",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <AntDesign name="left" size={30} color="#3F4883" />
+          <Text style={{ fontSize: 24, marginLeft: "5%" }}>Profile</Text>
+        </View>
+        <View style={{ marginRight: "5%" }}>
+          <Ionicons name="settings-sharp" size={27} color="#3F4883" />
+        </View>
       </View>
-      <View style={styles.header}>
+      <View style={{ alignItems: "center", justifyContent: "center" }}>
         <Image
-          source={require("../assets/ailogo.jpg")} // replace with your logo path
-          style={styles.logo}
+          source={require("../assets/Ellipse3.png")}
+          style={styles.userImage}
         />
-        <TouchableOpacity onPress={() => console.log("Edit Profile")}>
-          <Icon name="edit" type="font-awesome" size={24} color="#3388B7" />
-          <Text style={{ color: "#3388B7" }}>Edit Profile</Text>
-        </TouchableOpacity>
       </View>
-
-      <Image
-        source={require("../assets/demo-user.jpg")}
-        style={styles.userImage}
-      />
 
       <View style={styles.infoContainer}>
         <Text style={styles.infoText}>Student Name</Text>

@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { Rect, G, Path, Defs, ClipPath } from "react-native-svg"
 
-const Google = (props) => {
+const GoogleSignIn = (props) => {
   return (
     <Svg
       width={175}
@@ -51,4 +51,4 @@ const Google = (props) => {
   )
 }
 
-export default Google;
+export default GoogleSignIn;

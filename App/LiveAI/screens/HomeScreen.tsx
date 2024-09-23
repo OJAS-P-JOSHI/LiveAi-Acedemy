@@ -85,7 +85,7 @@ const Home = () => {
             <View style={styles.course}>
               <TouchableOpacity onPress={() => {navigation.navigate("RegisterScreen")}}>
                 <Image
-                  source={courseImage}
+                  source={require("../assets/image.png")}
                   style={styles.courseimage}
                 />
                 <View style={styles.courseDetail}>
@@ -109,7 +109,7 @@ const Home = () => {
             </View>
             <View style={styles.course}>
               <Image
-                source={courseImage}
+                source={require("../assets/image.png")}
                 style={styles.courseimage}
               />
               <View style={styles.courseDetail}>
@@ -126,12 +126,13 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   safeArea: {
-    flex: 1,
-    backgroundColor: "white", // Or any background color you need
+    width: width,  // 90% of the screen width
+    height: height,
+    backgroundColor: "white", 
   },
   container: {
-    width: width * 0.9,  // 90% of the screen width
-    height: height * 0.5,
+    width: width , 
+    height: height,
     backgroundColor: "#fff",
   },
   hello: {
